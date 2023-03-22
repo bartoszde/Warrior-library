@@ -2,7 +2,7 @@ const express = require('express');
 const Author = require('../models/Author.model');
 const router = express.Router();
 
-//READ: list of authors
+//GET /authors
 router.get("/authors", (req, res, next) => {
   Author.find()
     .then( authorsArr => {
@@ -18,5 +18,7 @@ router.get("/authors", (req, res, next) => {
       next(e);
     });
 });
+
+
 
 module.exports = router;
