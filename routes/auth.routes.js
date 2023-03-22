@@ -27,7 +27,8 @@ router.post("/signup", (req, res, next) => {
       return User.create({ email, passwordHash: hash });
     })
     .then( userFromDB  => {
-      console.log(userFromDB);
+      //account create succcessfully
+      res.redirect("/user-profile");
     })
     .catch(error => {
       console.log("error creating account...", error);
@@ -35,5 +36,10 @@ router.post("/signup", (req, res, next) => {
     });
 
 });
+
+
+//GET user-profile
+router.get('/user-profile', (req, res) => res.render('auth/user-profile'));
+
 
 module.exports = router;
