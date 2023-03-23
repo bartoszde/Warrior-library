@@ -26,6 +26,9 @@ const projectName = "library-project";
 
 app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 
+
+
+
 //
 // ROUTES
 //
